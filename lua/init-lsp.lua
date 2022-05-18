@@ -88,9 +88,16 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+
+-------------------------------------------
+--
+-- KEYMAP INSTALLATION
+--
+-------------------------------------------
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
+local servers = { 'pyright', 'tsserver', 'clangd', 'rust_analyzer' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -100,6 +107,7 @@ for _, lsp in pairs(servers) do
     }
   }
 end
+
 
 --------------------
 --------------------
