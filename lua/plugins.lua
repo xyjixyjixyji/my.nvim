@@ -26,6 +26,11 @@ return require('packer').startup(function()
       requires = {'kyazdani42/nvim-web-devicons'}
   }
 
+  -- toggleterm
+  use {
+      "akinsho/toggleterm.nvim", tag = 'v1.*'
+  }
+
   -- autopairs
   use 'windwp/nvim-autopairs'
 
