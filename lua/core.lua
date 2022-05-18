@@ -1,13 +1,21 @@
 ------------
 -- Default settings and keymaps
 ------------
-vim.o.number = true
-vim.o.tabstop = 4
+vim.wo.number = true
 vim.o.shiftwidth = 4
-vim.o.expandtab = true
+vim.o.showmatch = true
 vim.o.smartindent = true
 vim.o.termguicolors = true
 vim.o.cursorline = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.lazyredraw = true
+vim.o.showmode = true
+vim.o.ignorecase = true
+vim.o.ruler = true
+
+vim.bo.tabstop = 4
+vim.bo.expandtab = true
 
 vim.g.mapleader = ','
 vim.g.material_style = "deep ocean"
