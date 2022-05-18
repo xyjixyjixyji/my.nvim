@@ -20,6 +20,20 @@ return require('packer').startup(function()
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
+  -- fuzzyf
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  -- Surrounds
+  use {
+      "ur4ltz/surround.nvim",
+      config = function()
+        require"surround".setup {mappings_style = "surround"}
+      end
+  }
+
   -- tabline
   use {
       'romgrk/barbar.nvim',
@@ -32,7 +46,12 @@ return require('packer').startup(function()
   }
 
   -- autopairs
-  use 'windwp/nvim-autopairs'
+  use {
+      'windwp/nvim-autopairs',
+      config = function()
+          require('nvim-autopairs').setup{}
+      end
+  }
 
   -- gcc
   use {
@@ -44,7 +63,14 @@ return require('packer').startup(function()
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function()
+        require('lualine').setup{
+            options = {
+                theme = 'gruvbox'
+            }
+        }
+    end
   }
 
 end)
