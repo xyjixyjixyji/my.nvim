@@ -66,4 +66,7 @@ return require('packer').startup(function()
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
   }
 
+  -- session manager
+  use 'Shatur/neovim-session-manager'
+
 end)

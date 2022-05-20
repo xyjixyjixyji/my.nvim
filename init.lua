@@ -7,5 +7,6 @@ require('init-toggleterm')
 require('init-lualine')
 require('init-autopairs')
 require('init-colorscheme')
+require('init-session')
 
 vim.cmd 'colorscheme material'
