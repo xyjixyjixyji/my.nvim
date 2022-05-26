@@ -8,5 +8,7 @@ require('init-lualine')
 require('init-autopairs')
 require('init-colorscheme')
 require('init-session')
+require('init-indentBlankline')
 
-vim.cmd 'colorscheme material'
+-- vim.cmd 'colorscheme material'
+vim.cmd 'colorscheme catppuccin'
