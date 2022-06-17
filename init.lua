@@ -9,6 +9,7 @@ require('init-autopairs')
 require('init-colorscheme')
 require('init-session')
 require('init-indentBlankline')
+require('init-snip')
 
 -- vim.cmd 'colorscheme material'
 vim.cmd 'colorscheme catppuccin'
