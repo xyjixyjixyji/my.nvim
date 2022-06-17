@@ -12,4 +12,8 @@ require('init-indentBlankline')
 require('init-snip')
 
 -- vim.cmd 'colorscheme material'
-vim.cmd 'colorscheme catppuccin'
+-- vim.g.material_style = "deep ocean"
+-- vim.cmd 'colorscheme catppuccin'
+vim.opt.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])
+

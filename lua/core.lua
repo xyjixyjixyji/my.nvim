@@ -18,7 +18,6 @@ vim.bo.tabstop = 4
 vim.bo.expandtab = true
 
 vim.g.mapleader = ','
-vim.g.material_style = "deep ocean"
 
 ------------
 -- keymaps
