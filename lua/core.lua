@@ -1,6 +1,8 @@
 ------------
 -- Default settings and keymaps
 ------------
+local set = vim.opt
+
 vim.wo.number = true
 vim.o.shiftwidth = 4
 vim.o.showmatch = true
@@ -13,15 +15,20 @@ vim.o.lazyredraw = true
 vim.o.showmode = true
 vim.o.ignorecase = true
 vim.o.ruler = true
+vim.o.relativenumber = true
 
-vim.bo.tabstop = 4
-vim.bo.expandtab = true
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+
+vim.bo.t_Co = "256"
 
 vim.g.mapleader = ','
 
 ------------
 -- keymaps
 ------------
+vim.api.nvim_set_keymap('i', 'jk', '<Esc>', { noremap = false, silent = true })
 vim.api.nvim_set_keymap('n', '<C-f>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
@@ -32,13 +39,16 @@ vim.api.nvim_set_keymap('n', '<leader><Right>', ':vertical resize +3<CR>', { nor
 vim.api.nvim_set_keymap('n', '<leader><Left>', ':vertical resize -3<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader><Up>', ':resize +3<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader><Down>', ':resize -3<CR>', { noremap = true, silent = true })
-
-
+vim.api.nvim_set_keymap('n', '<leader>sv', ':source $MYVIMRC<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fs', '<cmd>Telescope lsp_document_symbols<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fr', '<cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
+
+
 
 --------------------
 -- Startup commands

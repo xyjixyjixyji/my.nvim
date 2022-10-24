@@ -8,6 +8,7 @@ return require('packer').startup(function()
 	as = "catppuccin"
   })
   use 'ellisonleao/gruvbox.nvim'
+  use 'EdenEast/nightfox.nvim'
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- LSP
