@@ -1,3 +1,6 @@
 My Personal Neovim Configuration Files
 
 - Change to lua
+
+- NOTES:
+1. You need to install **ripgrep** to use telescope's live grep

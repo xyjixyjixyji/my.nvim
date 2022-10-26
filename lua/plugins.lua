@@ -65,6 +65,10 @@ return require('packer').startup(function()
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
   }
+  -- git blame
+  use {
+	  'f-person/git-blame.nvim',
+  }
   -- session manager
   use 'Shatur/neovim-session-manager'
   -- indent blankline
