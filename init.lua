@@ -10,6 +10,7 @@ require('init-colorscheme')
 require('init-session')
 require('init-indentBlankline')
 require('init-snip')
+require('init-scroll')
 
 -- vim.cmd 'colorscheme material'
 -- vim.g.material_style = "deep ocean"

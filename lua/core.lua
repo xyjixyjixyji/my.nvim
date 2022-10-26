@@ -49,3 +49,4 @@ vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { nor
 --------------------
 -- Startup commands
 --------------------
+

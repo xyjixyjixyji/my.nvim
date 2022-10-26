@@ -73,4 +73,9 @@ return require('packer').startup(function()
   use 'Shatur/neovim-session-manager'
   -- indent blankline
   use "lukas-reineke/indent-blankline.nvim"
+  -- scroll
+  use {
+	  'Xuyuanp/scrollbar.nvim',
+  }
+  use 'karb94/neoscroll.nvim'
 end)
