@@ -7,3 +7,9 @@ require("focus").setup({excluded_buftypes = {"help"}})
 -- Enable resizing for excluded filetypes using forced_filetypes
 require("focus").setup({forced_filetypes = {"dan_repl"}})
 
+vim.api.nvim_set_keymap('n', '<C-h>', ':FocusSplitLeft<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', ':FocusSplitDown<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', ':FocusSplitUp<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', ':FocusSplitRight<CR>', { silent = true })
+vim.api.nvim_set_keymap('n', '<leader><C-l>', ':FocusSplitNicely<CR>', { silent = true })
+
