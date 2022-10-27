@@ -88,4 +88,8 @@ return require('packer').startup(function()
 	  require("focus").setup()
 	end
   }
+  -- minimap
+  use {
+    'gorbit99/codewindow.nvim',
+  }
 end)
