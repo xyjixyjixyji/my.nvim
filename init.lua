@@ -11,6 +11,7 @@ require('init-session')
 require('init-indentBlankline')
 require('init-snip')
 require('init-scroll')
+require('init-focus')
 
 -- vim.cmd 'colorscheme material'
 -- vim.g.material_style = "deep ocean"

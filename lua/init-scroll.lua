@@ -12,19 +12,3 @@ require('neoscroll').setup({
     performance_mode = false,    -- Disable "Performance Mode" on all buffers.
 })
 
-local api = vim.api
-local sbgrp = api.nvim_create_augroup("ScrollbarInit", { clear = true })
-
-api.nvim_create_autocmd("WinScrolled,VimResized,QuitPre", {
-	command = "silent! lua require('scrollbar').show()",
-	group = sbgrp, 
-})
-api.nvim_create_autocmd("WinEnter,FocusGained", {
-	command = "silent! lua require('scrollbar').show()",
-	group = sbgrp, 
-})
-api.nvim_create_autocmd("WinLeave,BufLeave,BufWinLeave,FocusLost", {
-	command = "silent! lua require('scrollbar').clear()",
-	group = sbgrp, 
-})
-

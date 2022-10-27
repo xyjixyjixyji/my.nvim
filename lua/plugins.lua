@@ -82,8 +82,12 @@ return require('packer').startup(function()
   -- indent blankline
   use "lukas-reineke/indent-blankline.nvim"
   -- scroll
-  use {
-	  'Xuyuanp/scrollbar.nvim',
-  }
   use 'karb94/neoscroll.nvim'
+  --- focus
+  use {
+	"beauwilliams/focus.nvim",
+	config = function()
+	  require("focus").setup()
+	end
+  }
 end)
