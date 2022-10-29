@@ -92,4 +92,6 @@ return require('packer').startup(function()
   use {
     'gorbit99/codewindow.nvim',
   }
+  -- wakatime
+  use 'wakatime/vim-wakatime'
 end)
