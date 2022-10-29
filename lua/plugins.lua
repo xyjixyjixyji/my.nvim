@@ -70,15 +70,6 @@ return require('packer').startup(function()
 	  'f-person/git-blame.nvim',
   }
   -- session manager
-  use {
-	'rmagatti/auto-session',
-	config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-      }
-    end
-  }
   -- indent blankline
   use "lukas-reineke/indent-blankline.nvim"
   --- focus
