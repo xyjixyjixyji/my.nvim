@@ -4,3 +4,5 @@ My Personal Neovim Configuration Files
 
 - NOTES:
 1. You need to install **ripgrep** to use telescope's live grep
+2. Run `:TSUpdate`
+
