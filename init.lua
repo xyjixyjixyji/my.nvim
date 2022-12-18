@@ -18,5 +18,5 @@ require('init-codewindow')
 -- vim.cmd 'colorscheme catppuccin'
 -- vim.opt.background = "dark" -- or "light" for light mode
 -- vim.cmd([[colorscheme gruvbox]])
-vim.cmd("colorscheme carbonfox")
+vim.cmd("colorscheme nightfox")
 

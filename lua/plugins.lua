@@ -47,7 +47,7 @@ return require('packer').startup(function()
   }
   -- toggleterm
   use {
-      "akinsho/toggleterm.nvim", tag = 'v1.*'
+      "akinsho/toggleterm.nvim"
   }
   -- autopairs
   use {
