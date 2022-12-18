@@ -11,6 +11,8 @@ require('init-session')
 require('init-indentBlankline')
 require('init-snip')
 require('init-codewindow')
+require('init-dap')
+require('init-rust')
 -- require('init-focus')
 
 -- vim.cmd 'colorscheme material'

@@ -72,17 +72,15 @@ return require('packer').startup(function()
   -- session manager
   -- indent blankline
   use "lukas-reineke/indent-blankline.nvim"
-  --- focus
-  use {
-	"beauwilliams/focus.nvim",
-	config = function()
-	  require("focus").setup()
-	end
-  }
   -- minimap
   use {
     'gorbit99/codewindow.nvim',
   }
   -- wakatime
   use 'wakatime/vim-wakatime'
+  -- debugging
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use 'simrat39/rust-tools.nvim'
+
 end)
