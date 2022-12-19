@@ -47,7 +47,7 @@ vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { nor
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', 'hw', '<cmd>HopWord<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>hw', '<cmd>HopWord<CR>', { noremap = true, silent = true })
 
 --------------------
 -- Startup commands

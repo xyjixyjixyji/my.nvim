@@ -1,8 +1,21 @@
-My Personal Neovim Configuration Files
+# My Neovim Configuration Files
+- It is full-fledged, way faster than vsc, also look better
+- I suggest use Fira Mono/Hack as your terminal's font
+- most shortcuts in ./lua/core.lua
 
-- Change to lua
+## Install
 
-- NOTES:
+```shell
+# install packer.nvim first
+
+cd ~/.config
+git clone https://github.com/Ji-Xinyou/my.nvim.git nvim # drink some tea
+
+nvim
+:PackerSync # drink some tea
+```
+
+## IMPORTANT NOTES:
 1. You need to install **ripgrep** to use telescope's live grep
-2. Run `:TSUpdate`
+2. Run `:TSUpdate` to update/install treesitter stuff
 
