@@ -9,6 +9,8 @@ return require('packer').startup(function()
   })
   use 'ellisonleao/gruvbox.nvim'
   use 'EdenEast/nightfox.nvim'
+  use 'folke/tokyonight.nvim'
+  use 'rktjmp/lush.nvim'
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- LSP
@@ -82,5 +84,15 @@ return require('packer').startup(function()
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   use 'simrat39/rust-tools.nvim'
-
+  -- hop
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { 
+          keys = 'etovxqpdygfblzhckisuran',
+      }
+    end
+  }
 end)
