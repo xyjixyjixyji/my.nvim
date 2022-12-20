@@ -44,7 +44,25 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true 
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+local bufopts = { noremap=true, silent=true, buffer=bufnr }
+vim.api.nvim_set_keymap('n', 'gr', ':lua vim.lsp.buf.references()<CR>', bufopts)
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+vim.keymap.set('n', 'gh', vim.lsp.buf.signature_help, bufopts)
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+vim.keymap.set('n', '<space>wl', function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, bufopts
+)
+vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+vim.keymap.set('n', '<space>cf', function() vim.lsp.buf.format { async = true } end, bufopts)
+
 
 vim.api.nvim_set_keymap('n', '<tab>', ':bn<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader><Right>', ':vertical resize +3<CR>', { noremap = true, silent = true })
