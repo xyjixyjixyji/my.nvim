@@ -1,16 +1,43 @@
+require("mason").setup()
+require("mason-lspconfig").setup()
+require"fidget".setup{}
+
+-- After setting up mason-lspconfig you may set up servers via lspconfig
+-- require("lspconfig").sumneko_lua.setup {}
+-- require("lspconfig").rust_analyzer.setup {}
+-- ...
+
 -- Add additional capabilities supported by nvim-cmp
-capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local on_attach = function(client, bufnr)
+end
 
 local lspconfig = require('lspconfig')
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'gopls', 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
+lspconfig.gopls.setup {
+    on_attach = on_attach,
     capabilities = capabilities,
-  }
-end
+}
+lspconfig.rust_analyzer.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig.clangd.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig.pyright.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig.tsserver.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig.sumneko_lua.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
 
 -- luasnip setup
 local luasnip = require 'luasnip'
@@ -77,37 +104,3 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
 end
 
--------------------------------------------
---
--- KEYMAP INSTALLATION
---
--------------------------------------------
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
-    }
-  }
-end
-
-
---------------------
---------------------
--- LSP INSTALLER
---------------------
---------------------
-require("nvim-lsp-installer").setup({
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
-    ui = {
-        icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
-        }
-    }
-})
