@@ -86,13 +86,25 @@ return require('packer').startup(function()
   use 'simrat39/rust-tools.nvim'
   -- hop
   use {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
-    config = function()
+  'phaazon/hop.nvim',
+  branch = 'v2', -- optional but strongly recommended
+  config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { 
-          keys = 'etovxqpdygfblzhckisuran',
-      }
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   }
+  -- bbq
+  use({
+    "utilyre/barbecue.nvim",
+    branch = "dev", -- omit this if you only want stable updates
+    requires = {
+      "neovim/nvim-lspconfig",
+      "smiteshp/nvim-navic",
+      "kyazdani42/nvim-web-devicons", -- optional dependency
+    },
+    after = "nvim-web-devicons", -- keep this if you're using NvChad
+    config = function()
+      require("barbecue").setup()
+    end,
+  })
 end)
