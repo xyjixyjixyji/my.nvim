@@ -31,7 +31,9 @@ return require('packer').startup(function()
     -- File navigator
     use {
         'kyazdani42/nvim-tree.lua',
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        },
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
     -- fuzzyf

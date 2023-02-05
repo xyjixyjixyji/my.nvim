@@ -1,4 +1,5 @@
 require('plugins')
+require('autocmd')
 require('core')
 require('init-tree')
 require('init-treesitter')
