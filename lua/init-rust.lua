@@ -7,7 +7,6 @@ local opts = {
   tools = { -- rust-tools options
 
     -- how to execute terminal commands
-    -- require('init-dap')
     -- options right now: termopen / quickfix
     executor = require("rust-tools.executors").termopen,
 
@@ -167,20 +166,17 @@ local opts = {
     -- standalone file support
     -- setting it to false may improve startup time
     standalone = true,
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-      -- Code action groups
-      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-    end,
   }, -- rust-analyzer options
 
   -- debugging stuff
   dap = {
-      adapter = require('rust-tools.dap').get_codelldb_adapter(
-          codelldb_path, liblldb_path)
-  }
+    adapter = {
+      type = "executable",
+      command = "lldb-vscode",
+      name = "rt_lldb",
+    },
+  },
 }
 
-rt.setup(opts)
+require('rust-tools').setup(opts)
 
