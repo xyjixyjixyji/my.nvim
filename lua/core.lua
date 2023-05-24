@@ -62,12 +62,12 @@ map('i', 'jk', '<Esc>', { noremap = false, silent = true })
 map('n', '<C-f>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- lsp
-local bufopts = { noremap=true, silent=true, buffer=bufnr }
-map('n', 'gr', ':lua vim.lsp.buf.references()<CR>', bufopts)
+local bufopts = { noremap = true, silent = true, buffer = bufnr }
+vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua require("telescope.builtin").lsp_references()<CR>', bufopts)
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua require("telescope.builtin").lsp_definitions()<CR>', bufopts)
+vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua require("telescope.builtin").lsp_implementations()<CR>', bufopts)
 map('n', 'gD', vim.lsp.buf.declaration, bufopts)
-map('n', 'gd', vim.lsp.buf.definition, bufopts)
 map('n', 'K', vim.lsp.buf.hover, bufopts)
-map('n', 'gi', vim.lsp.buf.implementation, bufopts)
 map('n', 'gh', vim.lsp.buf.signature_help, bufopts)
 map('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 map('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
@@ -84,13 +84,12 @@ vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { nor
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
 vim.keymap.set('', 'f', function()
-  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
-end, {remap=true})
+    hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+end, { remap = true })
 vim.keymap.set('', 'F', function()
-  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
-end, {remap=true})
+    hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+end, { remap = true })
 
 --------------------
 -- Startup commands
 --------------------
-
