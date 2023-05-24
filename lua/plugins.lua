@@ -77,15 +77,8 @@ return require('packer').startup(function()
     use {
       'f-person/git-blame.nvim',
     }
-    -- session manager
     -- indent blankline
     use "lukas-reineke/indent-blankline.nvim"
-    -- minimap
-    use {
-    'gorbit99/codewindow.nvim',
-    }
-    -- wakatime
-    use 'wakatime/vim-wakatime'
     -- debugging
     use 'mfussenegger/nvim-dap'
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
