@@ -28,7 +28,6 @@ set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4
 
-vim.g.mapleader = ','
 
 local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, opts)

@@ -1,95 +1,104 @@
-return require('packer').startup(function()
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+require('lazy').setup({
     -- colorscheme
-    use 'marko-cerovac/material.nvim'
-    use({
+    'marko-cerovac/material.nvim',
+    {
         "catppuccin/nvim",
-	    as = "catppuccin"
-    })
-    use 'ellisonleao/gruvbox.nvim'
-    use 'EdenEast/nightfox.nvim'
-    use 'folke/tokyonight.nvim'
-    use 'rktjmp/lush.nvim'
+	    name = "catppuccin"
+    },
+    'ellisonleao/gruvbox.nvim',
+    'EdenEast/nightfox.nvim',
+    'folke/tokyonight.nvim',
+    'rktjmp/lush.nvim',
+
     -- Post-install/update hook with neovim command
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+
     -- LSP
-    use {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
-      "j-hui/fidget.nvim"
-    }
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "j-hui/fidget.nvim",
+
     -- cmp
-    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    --snippet
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
-    use "rafamadriz/friendly-snippets" -- friendly snip
+    'hrsh7th/nvim-cmp', -- Autocompletion plugin
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+
     -- File navigator
-    use {
+    {
         'kyazdani42/nvim-tree.lua',
-        requires = {
+        dependencies = {
             'kyazdani42/nvim-web-devicons', -- optional, for file icon
         },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
-    }
+        version = 'nightly' -- optional, updated every week. (see issue #1193)
+    },
+
     -- fuzzyf
-    use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-    }
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+
     -- Surrounds
-    use {
+    {
       "ur4ltz/surround.nvim",
       config = function()
         require"surround".setup {mappings_style = "surround"}
       end
-    }
+    },
+
     -- tabline
-    use {
+    {
       'romgrk/barbar.nvim',
-      requires = {'kyazdani42/nvim-web-devicons'}
-    }
+      dependencies = {'kyazdani42/nvim-web-devicons'}
+    },
+
     -- toggleterm
-    use {
+    {
       "akinsho/toggleterm.nvim"
-    }
+    },
+
     -- autopairs
-    use {
+    {
       'windwp/nvim-autopairs',
-    }
+    },
+    
     -- gcc
-    use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-    }
+    {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    },
+
     -- lualine
-    use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    }
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
+    },
+
     -- git blame
-    use {
+    {
       'f-person/git-blame.nvim',
-    }
+    },
+    
     -- indent blankline
-    use "lukas-reineke/indent-blankline.nvim"
+    "lukas-reineke/indent-blankline.nvim",
+
     -- debugging
-    use 'mfussenegger/nvim-dap'
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    use 'simrat39/rust-tools.nvim'
+    'mfussenegger/nvim-dap',
+
+    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
+
+    'simrat39/rust-tools.nvim',
+
     -- hop
-    use {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
-    config = function()
-        -- you can configure Hop the way you like here; see :h hop-config
-        require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-      end
-    }
-end)
+    {
+        'phaazon/hop.nvim',
+        branch = 'v2', --  but strongly recommended
+        config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+          end
+    },
+})
