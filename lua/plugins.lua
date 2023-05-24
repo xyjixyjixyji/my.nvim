@@ -3,7 +3,7 @@ require('lazy').setup({
     'marko-cerovac/material.nvim',
     {
         "catppuccin/nvim",
-	    name = "catppuccin"
+        name = "catppuccin"
     },
     'ellisonleao/gruvbox.nvim',
     'EdenEast/nightfox.nvim',
@@ -20,7 +20,7 @@ require('lazy').setup({
     "j-hui/fidget.nvim",
 
     -- cmp
-    'hrsh7th/nvim-cmp', -- Autocompletion plugin
+    'hrsh7th/nvim-cmp',     -- Autocompletion plugin
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
 
@@ -30,7 +30,7 @@ require('lazy').setup({
         dependencies = {
             'kyazdani42/nvim-web-devicons', -- optional, for file icon
         },
-        version = 'nightly' -- optional, updated every week. (see issue #1193)
+        version = 'nightly'                 -- optional, updated every week. (see issue #1193)
     },
 
     -- fuzzyf
@@ -41,28 +41,28 @@ require('lazy').setup({
 
     -- Surrounds
     {
-      "ur4ltz/surround.nvim",
-      config = function()
-        require"surround".setup {mappings_style = "surround"}
-      end
+        "ur4ltz/surround.nvim",
+        config = function()
+            require "surround".setup { mappings_style = "surround" }
+        end
     },
 
     -- tabline
     {
-      'romgrk/barbar.nvim',
-      dependencies = {'kyazdani42/nvim-web-devicons'}
+        'romgrk/barbar.nvim',
+        dependencies = { 'kyazdani42/nvim-web-devicons' }
     },
 
     -- toggleterm
     {
-      "akinsho/toggleterm.nvim"
+        "akinsho/toggleterm.nvim"
     },
 
     -- autopairs
     {
-      'windwp/nvim-autopairs',
+        'windwp/nvim-autopairs',
     },
-    
+
     -- gcc
     {
         'numToStr/Comment.nvim',
@@ -79,16 +79,16 @@ require('lazy').setup({
 
     -- git blame
     {
-      'f-person/git-blame.nvim',
+        'f-person/git-blame.nvim',
     },
-    
+
     -- indent blankline
     "lukas-reineke/indent-blankline.nvim",
 
     -- debugging
     'mfussenegger/nvim-dap',
 
-    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
+    { "rcarriga/nvim-dap-ui",            dependencies = { "mfussenegger/nvim-dap" } },
 
     'simrat39/rust-tools.nvim',
 
@@ -98,7 +98,7 @@ require('lazy').setup({
         branch = 'v2', --  but strongly recommended
         config = function()
             -- you can configure Hop the way you like here; see :h hop-config
-            require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-          end
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+        end
     },
 })

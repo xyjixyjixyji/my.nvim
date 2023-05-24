@@ -18,7 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ','
 
 require('plugins')
-require('autocmd')
 require('core')
 require('init-tree')
 require('init-treesitter')
@@ -31,6 +30,5 @@ require('init-dap')
 require('init-rust')
 require('init-colorscheme')
 require('init-lsp')
--- require('init-focus')
 
 vim.cmd 'colorscheme catppuccin-macchiato'
