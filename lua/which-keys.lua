@@ -43,15 +43,16 @@ wk.register({
         i = { "<cmd>lua require'telescope.builtin'.lsp_implementations()<CR>", "Goto Implementations" },
         h = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
     },
-
+})
+local bufopts = { noremap = true, silent = true, buffer = bufnr }
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+wk.register({
     c = {
         name = "code actions/format",
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
         f = { "<cmd>lua vim.lsp.buf.format({async = true})<CR>", "Format Code" },
     },
 }, { prefix = "<leader>" })
-local bufopts = { noremap = true, silent = true, buffer = bufnr }
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
 
 -- session
 wk.register({
@@ -64,4 +65,3 @@ wk.register({
 }, { prefix = "<leader>" })
 
 -- misc
-
