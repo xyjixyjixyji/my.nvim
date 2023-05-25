@@ -30,6 +30,7 @@ require('init-dap')
 require('init-rust')
 require('init-colorscheme')
 require('init-lsp')
+require('init-cmp')
 require('which-keys')
 
 vim.cmd 'colorscheme catppuccin-macchiato'
