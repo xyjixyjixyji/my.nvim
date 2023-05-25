@@ -101,4 +101,10 @@ require('lazy').setup({
             require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
     },
+
+    -- trouble
+    {
+        "folke/trouble.nvim",
+        dependencies = { "kyazdani42/nvim-web-devicons" },
+    }
 })

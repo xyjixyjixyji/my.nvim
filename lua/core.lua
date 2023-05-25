@@ -73,6 +73,21 @@ map('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 map('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
 map('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end, bufopts)
 
+-- trouble
+-- Lua
+vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+    { silent = true, noremap = true }
+)
+vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+    { silent = true, noremap = true }
+)
+vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
+    { silent = true, noremap = true }
+)
+vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+    { silent = true, noremap = true }
+)
+
 -- telescope
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { noremap = true, silent = true })
@@ -80,7 +95,6 @@ vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { norem
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true, silent = true })
 
 -- hop
--- -- place this in one of your configuration file(s)
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
 vim.keymap.set('', 'f', function()
