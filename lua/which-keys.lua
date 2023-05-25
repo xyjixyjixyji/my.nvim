@@ -52,3 +52,16 @@ wk.register({
 }, { prefix = "<leader>" })
 local bufopts = { noremap = true, silent = true, buffer = bufnr }
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+
+-- session
+wk.register({
+    S = {
+        name = "Session",
+        l = { "<cmd>lua require'persistence'.load()<cr>", "Restore session for curdir" },
+        r = { "<cmd>lua require'persistence'.load({ last = true })<CR>", "Restore last session" },
+        s = { "<cmd>lua require'persistence'.stop()<CR>", "Stop persisting sessions" },
+    },
+}, { prefix = "<leader>" })
+
+-- misc
+
