@@ -54,8 +54,8 @@ map("n", "<leader>k", "<cmd>resize +2<cr>", { desc = "Increase window height" })
 map("n", "<leader>l", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- buffers
-map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "<S-h>", "<cmd>BufferPrevious<cr>", { desc = "Prev buffer" })
+map("n", "<S-l>", "<cmd>BufferNext<cr>", { desc = "Next buffer" })
 
 map('i', 'jk', '<Esc>', { noremap = false, silent = true })
 

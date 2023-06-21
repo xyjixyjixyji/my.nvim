@@ -46,6 +46,16 @@ wk.register({
 })
 local bufopts = { noremap = true, silent = true, buffer = bufnr }
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+vim.keymap.set('n', '<leader>ds', require'telescope.builtin'.lsp_document_symbols, bufopts)
+
+wk.register({
+    c = {
+        name = "code actions/format",
+        a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
+        f = { "<cmd>lua vim.lsp.buf.format({async = true})<CR>", "Format Code" },
+    },
+}, { prefix = "<leader>" })
+
 wk.register({
     c = {
         name = "code actions/format",
