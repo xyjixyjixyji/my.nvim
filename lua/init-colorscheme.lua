@@ -52,7 +52,7 @@ local catppuccin = require("catppuccin")
 catppuccin.setup {
     flavour = "mocha", -- latte, frappe, macchiato, mocha
     term_colors = true,
-    transparent_background = false,
+    transparent_background = true,
     no_italic = false,
     no_bold = false,
     styles = {

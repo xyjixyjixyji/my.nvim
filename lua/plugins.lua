@@ -17,7 +17,27 @@ require('lazy').setup({
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-    "j-hui/fidget.nvim",
+    {
+        "j-hui/fidget.nvim",
+        tag = "legacy",
+        event = "LspAttach",
+        opts = {
+            -- options
+        },
+    },
+    {
+        -- the context on the tabline
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {
+            -- configurations go here
+        },
+    },
 
     -- cmp
     'hrsh7th/cmp-vsnip',
@@ -28,11 +48,11 @@ require('lazy').setup({
 
     -- File navigator
     {
-        'kyazdani42/nvim-tree.lua',
+        'nvim-tree/nvim-tree.lua',
         dependencies = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icon
+            'nvim-tree/nvim-web-devicons', -- optional, for file icon
         },
-        version = 'nightly'                 -- optional, updated every week. (see issue #1193)
+        version = 'nightly'                -- optional, updated every week. (see issue #1193)
     },
 
     -- fuzzyf
@@ -52,7 +72,7 @@ require('lazy').setup({
     -- tabline
     {
         'romgrk/barbar.nvim',
-        dependencies = { 'kyazdani42/nvim-web-devicons' }
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
     -- toggleterm
@@ -76,7 +96,7 @@ require('lazy').setup({
     -- lualine
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true },
+        dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true },
     },
 
     -- git blame
@@ -107,7 +127,7 @@ require('lazy').setup({
     -- trouble
     {
         "folke/trouble.nvim",
-        dependencies = { "kyazdani42/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
     -- which-key

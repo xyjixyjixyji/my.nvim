@@ -33,4 +33,4 @@ require('init-lsp')
 require('init-cmp')
 require('which-keys')
 
-vim.cmd 'colorscheme carbonfox'
+vim.cmd 'colorscheme catppuccin-macchiato'
