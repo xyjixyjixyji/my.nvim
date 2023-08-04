@@ -56,14 +56,6 @@ wk.register({
     },
 }, { prefix = "<leader>" })
 
-wk.register({
-    c = {
-        name = "code actions/format",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code action" },
-        f = { "<cmd>lua vim.lsp.buf.format({async = true})<CR>", "Format Code" },
-    },
-}, { prefix = "<leader>" })
-
 -- session
 wk.register({
     S = {
