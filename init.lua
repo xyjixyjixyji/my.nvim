@@ -33,4 +33,5 @@ require('init-lsp')
 require('init-cmp')
 require('which-keys')
 
-vim.cmd 'colorscheme catppuccin-macchiato'
+vim.cmd 'set clipboard=unnamedplus'
+vim.cmd 'colorscheme vscode'

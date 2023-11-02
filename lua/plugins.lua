@@ -1,4 +1,7 @@
 require('lazy').setup({
+    -- fancy
+    'rcarriga/nvim-notify',
+
     -- colorscheme
     'marko-cerovac/material.nvim',
     {
@@ -9,6 +12,9 @@ require('lazy').setup({
     'EdenEast/nightfox.nvim',
     'folke/tokyonight.nvim',
     'rktjmp/lush.nvim',
+    'Mofiqul/vscode.nvim',
+    'plan9-for-vimspace/acme-colors',
+    'andreasvc/vim-256noir',
 
     -- Post-install/update hook with neovim command
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
@@ -105,7 +111,7 @@ require('lazy').setup({
     },
 
     -- indent blankline
-    "lukas-reineke/indent-blankline.nvim",
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
     -- debugging
     'mfussenegger/nvim-dap',
