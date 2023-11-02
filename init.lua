@@ -34,4 +34,4 @@ require('init-cmp')
 require('which-keys')
 
 vim.cmd 'set clipboard=unnamedplus'
-vim.cmd 'colorscheme vscode'
+vim.cmd 'colorscheme 256_noir'
