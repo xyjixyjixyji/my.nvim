@@ -1,4 +1,22 @@
 require('lazy').setup({
+    -- copilot
+    { 'github/copilot.vim' },
+
+    -- todo comments
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+        config = function()
+            require "todo-comments".setup {}
+        end
+
+    },
+
     -- fancy
     'rcarriga/nvim-notify',
 
@@ -14,7 +32,7 @@ require('lazy').setup({
     'rktjmp/lush.nvim',
     'Mofiqul/vscode.nvim',
     'plan9-for-vimspace/acme-colors',
-    'andreasvc/vim-256noir',
+    'Ji-Xinyou/vim-256noir',
 
     -- Post-install/update hook with neovim command
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
@@ -89,6 +107,8 @@ require('lazy').setup({
     -- autopairs
     {
         'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
     },
 
     -- gcc
@@ -111,12 +131,12 @@ require('lazy').setup({
     },
 
     -- indent blankline
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                              opts = {} },
 
     -- debugging
     'mfussenegger/nvim-dap',
 
-    { "rcarriga/nvim-dap-ui",            dependencies = { "mfussenegger/nvim-dap" } },
+    { "rcarriga/nvim-dap-ui",                dependencies = { "mfussenegger/nvim-dap" } },
 
     'simrat39/rust-tools.nvim',
 
