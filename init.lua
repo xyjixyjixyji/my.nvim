@@ -34,14 +34,14 @@ require('init-cmp')
 require('which-keys')
 
 vim.cmd 'set clipboard=unnamedplus'
-vim.cmd 'colorscheme 256_noir'
+vim.cmd 'colorscheme catppuccin-macchiato'
 
 -- auto format
-vim.api.nvim_create_augroup('AutoFormatting', {})
-vim.api.nvim_create_autocmd('BufWritePre', {
-    pattern = '*.lua',
-    group = 'AutoFormatting',
-    callback = function()
-        vim.lsp.buf.format()
-    end,
-})
+-- vim.api.nvim_create_augroup('AutoFormatting', {})
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--     pattern = { '*.lua', '*.rs', '*.c', '*.cpp', '*.h', '*.hpp', '*.go', '*.py' },
+--     group = 'AutoFormatting',
+--     callback = function()
+--         vim.lsp.buf.format()
+--     end,
+-- })

@@ -62,6 +62,16 @@ require('lazy').setup({
             -- configurations go here
         },
     },
+    {
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter', -- optional
+            'nvim-tree/nvim-web-devicons'      -- optional
+        }
+    },
 
     -- cmp
     'hrsh7th/cmp-vsnip',
@@ -85,7 +95,7 @@ require('lazy').setup({
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
-    -- Surrounds
+    -- -- Surrounds
     {
         "ur4ltz/surround.nvim",
         config = function()
