@@ -141,12 +141,19 @@ require('lazy').setup({
     },
 
     -- indent blankline
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                              opts = {} },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        config = function()
+            require("ibl").setup()
+        end,
+        opts = {}
+    },
 
     -- debugging
     'mfussenegger/nvim-dap',
 
-    { "rcarriga/nvim-dap-ui",                dependencies = { "mfussenegger/nvim-dap" } },
+    { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
 
     'simrat39/rust-tools.nvim',
 

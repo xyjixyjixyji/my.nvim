@@ -34,27 +34,26 @@ lspconfig.tsserver.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
+local lua_ls_setup = {
+    Lua = {
+        diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = { "vim", "bufnr" },
+        },
+        workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+            enable = false,
+        },
+    },
+}
+
 lspconfig.lua_ls.setup {
+    settings = lua_ls_setup,
     on_attach = on_attach,
     capabilities = capabilities,
 }
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    -- Mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-end

@@ -21,11 +21,9 @@ require('plugins')
 require('core')
 require('init-tree')
 require('init-treesitter')
-require('init-toggleterm')
 require('init-lualine')
 require('init-autopairs')
 require('init-session')
-require('init-indentBlankline')
 require('init-dap')
 require('init-rust')
 require('init-colorscheme')
@@ -34,7 +32,7 @@ require('init-cmp')
 require('which-keys')
 
 vim.cmd 'set clipboard=unnamedplus'
-vim.cmd 'colorscheme catppuccin-macchiato'
+vim.cmd 'colorscheme tokyonight-night'
 
 -- auto format
 -- vim.api.nvim_create_augroup('AutoFormatting', {})
