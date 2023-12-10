@@ -33,9 +33,9 @@ local bubbles_theme = {
 
 require('lualine').setup {
   options = {
-    theme = bubbles_theme,
-    component_separators = '|',
-    section_separators = { left = '', right = '' },
+    theme = 'night-owl',
+    -- component_separators = '|',
+    -- section_separators = { left = '', right = '' },
   },
   sections = {
     lualine_a = {

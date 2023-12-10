@@ -32,7 +32,7 @@ require('init-cmp')
 require('which-keys')
 
 vim.cmd 'set clipboard=unnamedplus'
-vim.cmd 'colorscheme tokyonight-night'
+vim.cmd 'colorscheme night-owl'
 
 -- auto format
 -- vim.api.nvim_create_augroup('AutoFormatting', {})
