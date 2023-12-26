@@ -14,6 +14,7 @@ $ git clone https://github.com/Ji-Xinyou/my.nvim.git nvim # drink some tea
 In nvim
 - run :Lazy
 - reopen
+- run :TSInstall all
 - run :TSUpdate
 
 You are all set.

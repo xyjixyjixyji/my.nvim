@@ -78,9 +78,11 @@ require('lazy').setup({
     -- cmp
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
-    'hrsh7th/nvim-cmp',     -- Autocompletion plugin
+    'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-path',
-    'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
 
     -- File navigator
     {
